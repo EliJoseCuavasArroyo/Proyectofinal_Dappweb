@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es" manifest="data.appache">
+
+	<head>
+		<title>Proyecto final</title>
+        <link rel="icon" type="image/png" href="Img/estudiante.png">
+		<!-- Metainformacion -->
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="Eli Jose Cuavas Arroyo" content="DlloAppWeb">
+		<meta name="keywords" content="html frontend web programacion">
+		<meta name="Proyecto final" content="UdeAWeb">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        
+        <!-- css -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- extras -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+	</head>
+<body>
+
+<!-- Navegador -->
+<header class="row bg-light">
+    
+        <!-- Imagen del icono -->
+        <div class="col-lg-1 ">
+            <img src="Img/logo-udea.png">
+        </div>
+    
+        <!-- Infomacion del navegador -->
+        <div class=col-lg-11>
+            <h1> Code Art ShAre </h1>
+            <nav class="navbar navbar-expand-lg bg-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-dark" href="index.html"><strong>Inicio</strong></a></li>
+                        <li class="nav-item"><a class="nav-link" href="registo.html"><strong>Registro</strong></a></li>
+                        <li class="nav-item"><a class="nav-link" href="ingresa.html"><strong>Ingresa</strong></a></li>
+                        <li class="nav-item"><a class="nav-link" href="micuenta.html"><strong>micuenta</strong></a></li>
+                        <li class="nav-item"><a class="nav-link" href="administrador.html"><strong>Administrador</strong></a></li>
+                    </ul>
+            </nav>
+        </div>
+</header>
+
+<!-- Contenido principal de la pagina -->
+
+<div class="container" class="containe1">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+        <!-- Formulario de incio de sesion -->
+
+            <h3>Iniciar de sesion:</h3>
+            <form action="../action_page.php" target="_blank">
+                <div class="texto">
+                  <label>Correo:</label><br>
+                  <input class="input" type="text" name="Email" size="20" required>
+                </div>
+                <div class="texto">
+                  <label>Contraseña:</label><br>
+                  <input class="input" type="password" name="Password" size="20" required>
+                  <br>
+                  <br>
+                  <button type="submit" type="button" class="btn btn-dark"><i class="icono-5"></i>Login</button>
+                </div>
+              </form>
+
+              <br><br>
+        <!-- Formulario de registro -->
+
+              <h3>Registro:</h3>
+              <form action="../action_page.php" target="_blank">
+                  <div class="texto">
+                    <label>Nombre de usuario:</label><br>
+                    <input class="input" type="text" name="Name" size="20" required>
+                  </div>
+                  <div class="texto">
+                    <label>Correo:</label><br>
+                    <input class="input" type="text" name="Email" size="20" required>
+                  </div>
+                  <div class="texto">
+                    <label>Contraseña:</label><br>
+                    <input class="input" type="password" name="Password" size="20" required>
+                    <br>
+                    <br>
+                    <button type="submit" type="button" class="btn btn-dark"><i class="icono-5"></i>Login</button>
+                  </div>
+                </form>
+
+                <br><br>
+        </div>
+    
+        <!-- Centro -->
+
+        <div class=col-lg-6>
+            <h1>Trámites más frecuentes</h1>
+                <p>Consulta las preguntas frecuentes sobre los preuniversitarios, educación flexible, requisitos para extranjeros y examen de admisión.</p>
+            <h3>¿Cómo puedo obtener la Tarjeta Integrada Personal - TIP?</h3>
+                <p>Solo podrá obtenerla la comunidad universitaria (profesores, egresados, estudiantes, pensionados, contratistas y personal administrativo). Para tramitarla debe dirigirse a la oficina de la TIP, calle 70 Nº 52-21, al frente del edificio de extensión. Allí mismo se tomará la fotografía y se hará entrega inmediata del documento, en horario de 8 am a 12 m. y de 1 p.m. a 5 p.m. 
+
+                    En caso de pérdida, hurto o riesgo, la expedición de una nueva TIP tiene un valor de $ 19.200 pesos (para la vigencia del año 2016) que se deben pagar en Bancolombia mediante el convenio Nº 48860. En estos casos se deben presentar el recibo de pago en la Oficina de Expedición de la TIP.</p>
+        </div>  
+    
+        <!-- Aside derecha -->
+
+        <div class=col-lg-3>
+            <h2> Noticias UdeA </h2>
+            <ul style="list-style-image: url(Img/simbolo-de-verificacion.png)" width=16px >
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasDestacados%2Fdirectora%2Bbibliotecologia">Certificada aspirante a la dirección de la Escuela Interamericana de Bibliotecología</a></li>
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasListado%2FNormativadeparticipacion">Normativa de participación
+                </a></li>
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasDestacados%2FdesignadosFilosofia%2By%2Bde%2Bla%2BEscuela%2Bde%2BIdiomas"> Designados directora del Instituto de Filosofía y director de la Escuela de Idiomas
+                </a></li>
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasListado%2FAcuerdos%2By%2BResoluciones%2BConsejo%2BSuperior%2BUniversitario">Acuerdos y Resoluciones Consejo Superior Universitario
+                </a></li>
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasListado%2FDesignaciones">Designaciones y elecciones de autoridades universitarias
+                </a></li>
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasListado%2FDistinciones">Distinciones
+                </a></li>
+                <li><a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QJNXQ2NnA18LExMTAwCXdzNg4HAwMzIXD8crMDC0tnI0NHEwMfA29DUwDHQNcAvxN85wMXLSD-KGP0GOICjAXH68SiIwm98uH4UqhX-nsauBoGWfqYBxu6eRibmxlAF-LxIyJKC3NDQCINMTwA6JZvM/?1dmy&page=udea.generales.interna&urile=wcm%3apath%3a%2FPortalUdeA%2FasPortalUdeA%2FasHomeUdeA%2FAcerca%2Bde%2Bla%2BUdeA%2FasContenidos%2FasListado%2FResoluciones%2BRectorales">Resoluciones Rectorales
+                </a></li>
+                <li><a href="http://www.udea.edu.co/wps/portal/udea/web/inicio/udea-noticias/noticias-juridico">Noticias jurídicas
+                </a></li>
+            </ul>
+            <a href="https://www.udea.edu.co/wps/portal/udea/web/inicio/acerca-udea"><h3>Más información</h3></a>
+        </div>
+    </div>
+</div>
+
+<!-- Pie de pagina -->
+<footer class = "bg-light">
+    <section>
+        <p><b>Creador de la pagina:</b> Eli Jose Cuavas Arroyo</p>
+        <p><b>Telefono:</b> 3225612400</p>
+        <p><b>Correo:</b> eli.cuavas@udea.edu.co</p>
+        <p><b>TIP:</b> 1007675766</p>
+    <div>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+</footer>
+
+</body>
+
+</html>
