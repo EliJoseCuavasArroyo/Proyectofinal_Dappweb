@@ -19,6 +19,9 @@
         <!-- extras -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 
+    <!-- Script de la pagina-->
+    <script type="text/javascript" src="js/login.js"></script>
+
 	</head>
 <body>
 
@@ -62,7 +65,7 @@
         <div class=col-lg-4>
 
             <h3>Iniciar de sesion:</h3>
-            <form action="../action_page.php" target="_blank">
+            <form name="login" action="login.php" target="_blank">
                 <div class="texto">
                   <label>Usuario:</label><br>
                   <input class="input" type="text" name="Name" size="30" required>
@@ -79,14 +82,14 @@
               <br><br>
 
               <h3>Registrarse:</h3>
-              <form action="../action_page.php" target="_blank">
+              <form name="registro" action="registro.php" target="_blank">
                   <div class="texto">
                     <label>Nombre de usuario:</label><br>
                     <input class="input" type="text" name="Name" size="30" required>
                   </div>
                   <div class="texto">
                     <label>Correo:</label><br>
-                    <input class="input" type="text" name="Email" size="30" required>
+                    <input class="input" type="email" name="Email" size="30" required>
                   </div>
                   <div class="texto">
                     <label>Contraseña:</label><br>
