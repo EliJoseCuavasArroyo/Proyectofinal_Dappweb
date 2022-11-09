@@ -1,9 +1,16 @@
 window.onload = function () {
 
 	//Acceso atraves del name
-    var formAdmin = document.admin;
+	
+    var formLogin = document.login;
+	var formAdmin = document.admin;
 
 	// Restriccion de los datos ingresados
+
+	var Elements_Login = formLogin.elements;
+	for(var i = 0; i<Elements_Login.length; i++){
+		Elements_Login[i].onkeypress = restringir;
+	}
 
 	var Elements_Admin = formAdmin.elements;
 	for(var i = 0; i<Elements_Admin.length; i++){
@@ -11,6 +18,8 @@ window.onload = function () {
 	}
 
 	// Validacion de los datos
+
+	formLogin.onsubmit = validar;
 	formAdmin.onsubmit = validar;
     
 }

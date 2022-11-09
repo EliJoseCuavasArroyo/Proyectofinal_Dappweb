@@ -1,3 +1,38 @@
+<?php
+    require "database.php";
+
+    session_start();
+
+    // Recepcionamos los datos de autenticacion
+    
+    if(isset($_SESSION['auth'])){
+        if ($_SESSION['user_id'] === $user_id_admin){
+            $text1 = "Administrador";
+            $text2 = "admin.php";
+        }
+        else{
+            $text1 = $_SESSION['user'];
+            $text2 = "home.php";
+        }
+    }
+    else{
+        $text1 = "Ingresa";
+        $text2 = "ingresa.php";
+    }
+
+    // Nos preparamos para mostrar los datos
+
+    $sentenciaSQL = "SELECT * FROM `data`";
+
+    $consulta = $conexion->prepare($sentenciaSQL);
+
+    $consulta->execute(); // Ejecucion de la consulta
+
+    $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC); // Obtenemos la base de datos
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es" manifest="data.appache">
 
@@ -37,11 +72,10 @@
             <h6>"Comparte tu arte con el mundo"</h6>
             <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link text-white" href="index.html"><strong>Inicio</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="login.html"><strong>Ingresa</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="galeria.html"><strong>Galeria</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="administrador.html"><strong>Administrador</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="top.html"><strong>Top</strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="inicio.php"><strong>Inicio</strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href=<?php print($text2);?>><strong><?php print($text1);?></strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="galeria.php"><strong>Galeria</strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="top.php"><strong>Top</strong></a></li>
                     </ul>
             </nav>
         </div>
@@ -60,11 +94,23 @@
         <!-- Centro -->
 
         <div class=col-lg-10>
-            <img src="img/Code_Art_Online.png" width="300" height="300">
-            <img src="img/asignatura-de-arte.png" width="300" height="300">
-            <img src="img/watercolor1.png" width="300" height="300">
-            <!-- Poner sistema para que se vaya actualizando la cantidad de imagenes costantemente-->
+            <p>Bienvenido a la galería de la comunidad...</p>
+            <div class="row">
+                <?php foreach ($resultados as $imagen){ ?>
+                <div class=col-md-3> 
+                <div class="card bg-dark">
+                <?php print("<img class='card-img-top' src='img/".$imagen['img']."' alt='Card image'>");?>
+                <div class="card-body">
+                    <h5 class="card-title"><?php print($imagen['name']);?></h5>
+                    <p class="card-text">Usuario: <?php print($imagen['user']);?></p>
+                </div>
+                </div>
+                </div>
 
+                <?php } ?>
+            </div>
+
+            <br><br><br><br>
         </div>  
     
         <!-- Aside derecha -->

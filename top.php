@@ -1,3 +1,45 @@
+<?php
+    require "database.php";
+
+    session_start();
+
+    // Recepcionamos los datos de autenticacion
+    
+    if(isset($_SESSION['auth'])){
+        if ($_SESSION['user_id'] === $user_id_admin){
+            $text1 = "Administrador";
+            $text2 = "admin.php";
+        }
+        else{
+            $text1 = $_SESSION['user'];
+            $text2 = "home.php";
+        }
+    }
+    else{
+        $text1 = "Ingresa";
+        $text2 = "ingresa.php";
+    }
+
+    // Nos preparamos para mostrar los datos
+
+    $sentenciaSQL = "SELECT * FROM `data`";
+
+    $consulta = $conexion->prepare($sentenciaSQL);
+
+    $consulta->execute(); // Ejecucion de la consulta
+
+    $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC); // Obtenemos la base de datos
+
+    $resultados_top = array(); // Hacemos una lista de las imagenes del Top
+
+    foreach ($resultados as $imagen){
+        if ($imagen['pos'] === "SI"){
+            array_push($resultados_top, $imagen);
+        } 
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="es" manifest="data.appache">
 
@@ -19,9 +61,6 @@
         <!-- extras -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 
-    <!-- Script de la pagina-->
-    <script type="text/javascript" src="js/admin.js"></script>
-
 	</head>
 <body>
 
@@ -40,11 +79,10 @@
             <h6>"Comparte tu arte con el mundo"</h6>
             <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link text-white" href="index.html"><strong>Inicio</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="login.html"><strong>Ingresa</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="galeria.html"><strong>Galeria</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="administrador.html"><strong>Administrador</strong></a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="top.html"><strong>Top</strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="inicio.php"><strong>Inicio</strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href=<?php print($text2);?>><strong><?php print($text1);?></strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="galeria.php"><strong>Galeria</strong></a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="top.php"><strong>Top</strong></a></li>
                     </ul>
             </nav>
         </div>
@@ -57,34 +95,33 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div class="col-lg-2">
+        <div class="col-lg-1">
         </div>
     
         <!-- Centro -->
 
-        <div class=col-lg-5>
-
-            <h3>Iniciar de sesion de administrador:</h3>
-            <form name="admin" action="admin.php" target="_blank">
-                <div class="texto">
-                  <label>Usuario de administrador:</label><br>
-                  <input class="input" type="text" name="Name" size="30" required>
+        <div class=col-lg-10>
+            <p>Este es el top de imágenes elegidas por los administradores, si la tuya esta presente, felicitaciones y gracias por formar parte de nuestra comunidad...</p>
+            <div class="row">
+                <?php foreach ($resultados_top as $imagen_top){ ?>
+                <div class=col-md-3> 
+                <div class="card bg-dark">
+                <?php print("<img class='card-img-top' src='img/".$imagen_top['img']."' alt='Card image'>");?>
+                <div class="card-body">
+                    <h5 class="card-title"><?php print($imagen_top['name']);?></h5>
+                    <p class="card-text">Usuario: <?php print($imagen_top['user']);?></p>
                 </div>
-                <div class="texto">
-                  <label>Contraseña:</label><br>
-                  <input class="input" type="password" name="Password" size="30" required>
-                  <br>
-                  <br>
-                  <button type="submit" type="button" class="btn btn-dark"><i class="icono-5"></i>Login</button>
                 </div>
-              </form>
+                </div>
 
-                <br><br>
+                <?php } ?>
+            </div>
+
+            <br><br><br><br>
         </div>  
     
         <!-- Aside derecha -->
-        <div class=col-lg-5>
-            <img src="img/watercolor1.png">
+        <div class=col-lg-1>
         </div>
 
     </div>

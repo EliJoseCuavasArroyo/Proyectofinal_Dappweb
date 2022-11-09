@@ -2,7 +2,6 @@ window.onload = function () {
 
 	//Acceso atraves del name
     var formLogin = document.login;
-	var formRegistro = document.registro;
 
 	// Restriccion de los datos ingresados
 
@@ -11,14 +10,8 @@ window.onload = function () {
 		Elements_Login[i].onkeypress = restringir;
 	}
 
-	var Elements_Registro = formRegistro.elements;
-	for(var i = 0; i<Elements_Registro.length; i++){
-		Elements_Registro[i].onkeypress = restringir;
-	}
-
 	// Validacion de los datos
 	formLogin.onsubmit = validar;
-    formRegistro.onsubmit = validar;
     
 }
 
